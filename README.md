@@ -43,11 +43,12 @@ Projeto realizado em 03 cursos instruidos por [**Vinicios Neves**](https://githu
 1. HTML
 2. CSS
 3. JS
-4. React
-5. Next
-6. Docker
-7. Postgres
-8. Prisma
+4. TypeScript
+5. React
+6. Next
+7. Docker
+8. Postgres
+9. Prisma
 
 ## Autor
 Meu nome é **Alexandre Coelho**, sou autor deste ReadMe e estudante de Desenvolvimento Web. 
