@@ -1,5 +1,5 @@
 import { CardPost } from "@/components/CardPost";
-import Post from "@/interface/Post";
+import IPost from "@/interface/Post";
 import logger from "@/logger";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -39,9 +39,14 @@ async function getAllPosts(page: number, searchTerm: string) {
       take: perPage,
       skip,
       where,
-      orderBy: { createdAt: "desc" },
+      orderBy: { id: "desc" },
       include: {
         author: true,
+        comments: {
+          include: {
+            author: true,
+          },
+        },
       },
     });
 
@@ -66,7 +71,7 @@ export default async function Home({
   } = await getAllPosts(currentPage, searchTerm);
   return (
     <main className={styles.grid}>
-      {posts.map((post: Post) => (
+      {posts.map((post: IPost) => (
         <CardPost post={post} key={post.id}></CardPost>
       ))}
       <div className={styles.links}>

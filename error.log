@@ -6,3 +6,4 @@
 {"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"introducao-ao-typesc"}
 {"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"introducao-ao-typesc"}
 {"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"introducao-ao-typescriptsad"}
+{"error":{"clientVersion":"5.18.0","name":"PrismaClientInitializationError"},"level":"error","message":"Falha ao obter posts"}

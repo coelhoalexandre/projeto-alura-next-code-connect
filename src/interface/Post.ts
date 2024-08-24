@@ -1,6 +1,7 @@
-import Author from "./Author";
+import IAuthor from "./Author";
+import IComment from "./Comment";
 
-export default interface Post {
+export default interface IPost {
   id: number;
   cover: string;
   title: string;
@@ -10,5 +11,7 @@ export default interface Post {
   createdAt: Date;
   upadatedAt: Date;
   authorId: number;
-  author: Author;
+  author: IAuthor;
+  likes: number;
+  comments: IComment[];
 }

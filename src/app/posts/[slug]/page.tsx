@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { CardPost } from "@/components/CardPost";
 import db from "../../../../prisma/db";
 import { redirect } from "next/navigation";
+import { CommentList } from "@/components/CommentList";
 
 async function getPostBySlug(slug: string) {
   // const url = `http://localhost:3042/posts?slug=${slug}`;
@@ -28,6 +29,19 @@ async function getPostBySlug(slug: string) {
       },
       include: {
         author: true,
+        comments: {
+          include: {
+            author: true,
+            children: {
+              include: {
+                author: true,
+              },
+            },
+          },
+          where: {
+            parentId: null,
+          },
+        },
       },
     });
 
@@ -56,6 +70,7 @@ const PagePost = async ({ params }: { params: { slug: string } }) => {
       <div className={styles.code}>
         <div dangerouslySetInnerHTML={{ __html: post.markdown }} />
       </div>
+      <CommentList post={post} comments={post.comments} />
     </div>
   );
 };

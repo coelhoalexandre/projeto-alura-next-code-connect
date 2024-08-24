@@ -1,7 +1,7 @@
 import IButtonProps from "@/interface/ButtonProps";
-import styles from "./button.module.css";
+import styles from "./iconbutton.module.css";
 
-export const Button = ({ children, ...rest }: IButtonProps) => {
+export const IconButton = ({ children, ...rest }: IButtonProps) => {
   return (
     <button {...rest} className={styles.btn}>
       {children}
